@@ -1,4 +1,4 @@
-# soap_server.py
+# server.py
 from spyne import Application, rpc, ServiceBase, Unicode, ByteArray
 from spyne.protocol.soap import Soap11
 from spyne.server.wsgi import WsgiApplication
@@ -37,6 +37,6 @@ application = Application(
 wsgi_app = WsgiApplication(application)
 
 if __name__ == "__main__":
-    print("🚀 SOAP Server berjalan di http://localhost:5000")
-    server = make_server("0.0.0.0", 5000, wsgi_app)
+    print("🚀 SOAP Server berjalan di http://0.0.0.0:80/")
+    server = make_server("0.0.0.0", 80, wsgi_app)
     server.serve_forever()

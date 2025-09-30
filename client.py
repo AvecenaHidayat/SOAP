@@ -1,15 +1,15 @@
 # client.py
 from zeep import Client
 
-# URL WSDL dari server kamu
-wsdl = "http://localhost:5000/?wsdl"
+# URL WSDL dari server Zeabur
+wsdl = "https://soap-ave.zeabur.app/?wsdl"
 client = Client(wsdl=wsdl)
 
-# Misalnya kita panggil method generate_txt (atau apapun nama servicenya)
+# Contoh request
 size = "10kb"
 result = client.service.download_txt(size)
 
-# simpan ke file
+# Simpan ke file
 with open(f"{size}.txt", "wb") as f:
     f.write(result)
 
