@@ -37,6 +37,6 @@ application = Application(
 wsgi_app = WsgiApplication(application)
 
 if __name__ == "__main__":
-    print("🚀 SOAP Server berjalan di http://0.0.0.0:80/")
-    server = make_server("0.0.0.0", 80, wsgi_app)
+    print("🚀 SOAP Server berjalan di http://0.0.0.0:8080/")
+    server = make_server("0.0.0.0", 8080, wsgi_app)
     server.serve_forever()
